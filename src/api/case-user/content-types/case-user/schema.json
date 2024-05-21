@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "case_users",
+  "info": {
+    "singularName": "case-user",
+    "pluralName": "case-users",
+    "displayName": "case_user",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "userID": {
+      "type": "integer",
+      "unique": true
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "string"
+    },
+    "Phone": {
+      "type": "integer",
+      "unique": true
+    },
+    "Email": {
+      "type": "email",
+      "unique": true
+    },
+    "Telegram": {
+      "type": "integer",
+      "unique": true
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "user_id"
+    }
+  }
+}

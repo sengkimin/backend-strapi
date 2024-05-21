@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "category_ids",
+  "info": {
+    "singularName": "category-id",
+    "pluralName": "category-ids",
+    "displayName": "CategoryID",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CategoryID": {
+      "type": "integer",
+      "unique": true
+    },
+    "Name": {
+      "type": "string"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "category_ids"
+    }
+  }
+}
